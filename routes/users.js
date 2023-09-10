@@ -5,4 +5,8 @@ const usersController = require('../controllers/user_controller')
 console.log('router1')
 router.get('/profile', usersController.profile)
 
+router.get('/sign-up', usersController.signUp)
+
+router.get('/sign-in', usersController.signIn)
+
 module.exports = router;
