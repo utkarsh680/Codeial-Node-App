@@ -26,18 +26,14 @@ module.exports.create = async function (req, res) {
     return res.redirect("back");
   }
   const user = await User.findOne({ email: req.body.email });
-
   try {
     if (!user) {
-      const createUser = await User.create(req.body);
-      console.log(createUser)
-      if (createUser) {
-         console.log(createUser)
+      const userCreate = User.create(req.body);
+      if (userCreate) {
         return res.redirect("/users/sign-in");
-
       }
     } else {
-      return res.redirect("back");
+      return res.redirectt("back");
     }
   } catch (err) {
     console.log("error", err);
@@ -45,7 +41,29 @@ module.exports.create = async function (req, res) {
 };
 
 //sign in and create session for user
-module.exports.createSession = function (req, res) {
-  //todo
+module.exports.createSession = async function (req, res) {
+  //find the user
+  const userSession = await User.findOne({ email: req.body.email });
+  //handle user found
+  try {
+    if (userSession) {
+      //if user found but password does't match
+    
+      if(userSession.password != req.body.password){
+         return res.redirect('back')
+      }
+      //handle session creation
+      res.cookie('user_id', userSession.id)
+      return res.redirect('/users/profile');
+    }else{
+      return res.redirect('back')
+    }
+  } catch (err) {
+    console.log(err, "error");
+  }
+
+
+
+  //handle user not found
 };
 //module.exports.action = function(req, res){}
