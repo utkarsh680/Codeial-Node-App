@@ -17,4 +17,15 @@ module.exports.signUp = function(req, res) {
        title: 'Codeial | sign In'
     })
  }
+
+ //get the sign up data
+
+ module.exports.create = function(req, res){
+    //todo
+ }
+
+ //sign in and create session for user             
+ module.exports.createSession = function(req, res){
+    //todo
+ }
 //module.exports.action = function(req, res){}
