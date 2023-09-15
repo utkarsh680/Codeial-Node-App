@@ -2,15 +2,14 @@ const User = require("../models/user");
 
 module.exports.profile = async function (req, res) {
   if (req.cookies.user_id) {
-    const UserId = await User.findById(req.cookies.user_id);
+    const user = await User.findById(req.cookies.user_id);
     try {
-      if (UserId) {
+      if (user) {
         return res.render("user_profile", {
           title: "User Profile",
-          user: UserId,
+          user: user,
         });
       }
-      return res.redirect("/users/sign-in");
     } catch (err) {
       console.log("error", err);
     }
