@@ -10,12 +10,13 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
 />
-<div class="sign-up-placement">
+<div class="sign-up-placement" >
   <div class="sign-up-box">
     <div class="left">
-      <h1 style="color: white">Sign Up</h1>
+      
       <div class="sign-up-text">
-        <p style="font-weight: 600; color: white">
+        <h1>Sign Up</h1>
+        <p>
           Enter Details to continue
           <span><i class="fa-solid fa-arrow-right"></i></span>
         </p>
@@ -47,9 +48,10 @@
               name="password"
               placeholder="Password"
               required
-              id="id_passwordSignup"
+              id="password"
+              class="password-input"
             />
-            <i class="far fa-eye" id="togglePasswordSignup"></i>
+            <i class="far fa-eye"id="show-password"></i>
             <img
               src="https://cdn-icons-png.flaticon.com/512/8882/8882850.png"
               alt="email"
@@ -58,12 +60,13 @@
           <div id="confirm-password-input">
             <input
               type="password"
-              name="confirm password"
+              name="confirm_password"
               placeholder="Confirm Password"
               required
-              id="confirm_password"
+              id="confirm-password"
+              class="password-input"
             />
-            <i class="far fa-eye" id="toggleConfirmPass"></i>
+            <i class="far fa-eye" id="show-confirm-password"></i>
             <img
               src="https://cdn-icons-png.flaticon.com/512/8882/8882850.png"
               alt="email"
@@ -75,20 +78,26 @@
         </div>
       </form>
     </div>
-
+    <div class="checkout-other">
+      <p>Checkout other options</p>
+    </div>
+    <div class="create-account">
+      Already Registered? 
+      <span>
+        <a href="/users/sign-in"
+          >&nbsp; Sign in <i class="fa-solid fa-arrow-right"></i
+        ></a>
+      </span>
+    </div>
     <div class="right">
       <div class="checkout">
-        <p class="text1">
-          You are Signed Out
-        </p>
-        <p class="text2">
-          Sign in to get the best experience
-        </p>
+        <p class="text1">You are Signed Out</p>
+        <p class="text2">Sign in to get the best experience</p>
       </div>
 
       <div id="gfg-icon">
         <div>
-          <a id="email"
+          <a id="email" href="/users/sign-in"
             ><i class="fa-solid fa-envelope"></i>
             <p>Continue with email</p>
           </a>
@@ -104,16 +113,16 @@
         </div>
 
         <div>
-          <a id="facebook"
-            ><i class="fa-brands fa-facebook-f"></i>
-            <p>Continue with Facebook</p>
+          <a id="github" href="/users/auth/github" style="text-decoration: none;"
+            ><i class="fa-brands fa-github"></i>
+            <p>Continue with github</p>
           </a>
         </div>
       </div>
       <div class="Already-account">
         Already have an account?
         <span>
-          <a style="color: blue" href="/users/sign-in"
+          <a href="/users/sign-in" style="text-decoration: none;"
             >&nbsp; Sign in<i class="fa-solid fa-arrow-right"></i
           ></a>
         </span>
@@ -129,3 +138,5 @@
     </div>
   </div>
 </div>
+
+<script src="/js/password-cp-eye.js"></script>
