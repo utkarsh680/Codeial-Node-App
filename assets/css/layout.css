@@ -1,8 +1,7 @@
 body {
-    margin: 0;
-    /* color: red;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; */
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
