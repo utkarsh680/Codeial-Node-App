@@ -1,21 +1,37 @@
-<header>
-    Page header hai ye
-</header>
-
 <ul>
     <% if (locals.user){ %>
-    <li><%= user.name %></li>
-    <li id = 'sign-out-button'>
-        <a href="/users/sign-out">Sign Out</a>
+    <li id="sign-out-button">
+      <a href="/users/sign-out">Sign Out</a>
     </li>
-    <% } else { %> 
-        <li id="login-button">
-            <a href="/users/sign-in">Login</a>
-        </li>
-        <li id ="sign-up-button">
-            <a href="/users/sign-up">Sign Up</a>
-        </li>
+    <% } else { %>
+    <li id="login-button">
+      <a href="/users/sign-up">Sign-up</a>
+    </li>
     <% } %>
   </ul>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var currentUrl = window.location.href;
   
-<script src="/js/header.js"></script>
+      if (currentUrl === "http://localhost:8000/users/sign-up") {
+        var loginButton = document.getElementById("login-button");
+        if (loginButton) {
+          loginButton.innerHTML = '<a href="/users/sign-in">Sign-in</a>';
+        }
+      }
+  
+    //   if (currentUrl === "https://node-authentication-ppvs.onrender.com/users/forgotPasswordRender") {
+    //     var backButton = document.getElementById("sign-out-button");
+    //     if (backButton) {
+    //       backButton.innerHTML = '<a href="/users/sign-in">Back</a>';
+    //     }
+    //   }
+  
+    //   if (currentUrl.includes("https://node-authentication-ppvs.onrender.com/users/reset-password/")) {
+    //     var backButton = document.getElementById("sign-out-button");
+    //     if (backButton) {
+    //       backButton.innerHTML = '<a href="/users/profile">Back</a>';
+    //     }
+    //   }
+    });
+  </script>

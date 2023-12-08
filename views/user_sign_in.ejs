@@ -1,18 +1,6 @@
 <link rel="stylesheet" href="/css/user_sign_in.css" />
 
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-  integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
-/>
-
-<div class="sign-in-placement">
+<div class="sign-in-placement" id="signinContainer">
   <div class="sign-in">
     <p>
       Welcome,
@@ -38,13 +26,14 @@
             id="id_password"
           />
           <!-- <i class="fa-regular fa-eye" id="togglePassword"></i> -->
-          
+
           <img
             src="https://cdn-icons-png.flaticon.com/512/8882/8882850.png"
             alt="icon"
           />
           <i class="far fa-eye" id="togglePassword"></i>
         </div>
+        <div class="forgotPassword"><a href="/users/forgotPasswordRender">Forget password?</a></div>
         <div class="submit-button">
           <button>Sign In</button>
         </div>
@@ -61,13 +50,14 @@
         src="https://cdn-icons-png.flaticon.com/512/300/300221.png"
         alt="google"
     /></a>
-    <a class="facebook"><i class="fa-brands fa-facebook-f"></i></a>
-    <a class="github"><i class="fa-brands fa-github"></i> </a>
+    <a href="/users/auth/github" class="github" style="text-decoration: none;"
+      ><i class="fa-brands fa-github"></i>
+    </a>
   </div>
   <div class="create-account">
     or Create an Account
     <span>
-      <a style="color: blue" href="/users/sign-up"
+      <a href="/users/sign-up" 
         >&nbsp; Sign up <i class="fa-solid fa-arrow-right"></i
       ></a>
     </span>
